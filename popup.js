@@ -6,7 +6,7 @@ var textFile = null;
 
 
 chrome.tabs.query({windowId: chrome.windows.WINDOW_ID_CURRENT}, (tabs) => {
-    tabs.foreach((tab, index) => {
+    tabs.forEach((tab, index) => {
         const tabItem = document.createElement('div');
         tabItem.className = 'tab-item'
 
