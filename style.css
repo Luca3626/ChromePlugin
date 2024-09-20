@@ -54,3 +54,15 @@ body {
     display: flex;
     gap: 5px;
   }
+
+  .tab-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tab-label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}

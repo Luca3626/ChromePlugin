@@ -5,7 +5,7 @@ const fileInput = document.getElementById("fileInput");
 var textFile = null;
 
 
-chrome.tabs.query({windowID: chrome.windows.WINDOW_ID_CURRENT}, (tabs) => {
+chrome.tabs.query({windowId: chrome.windows.WINDOW_ID_CURRENT}, (tabs) => {
     tabs.foreach((tab, index) => {
         const tabItem = document.createElement('div');
         tabItem.className = 'tab-item'
@@ -26,7 +26,7 @@ chrome.tabs.query({windowID: chrome.windows.WINDOW_ID_CURRENT}, (tabs) => {
         tabItem.appendChild(label);
         all_tabs.appendChild(tabItem);
         all_tabs.appendChild(document.createElement('hr'));
-    })
+    });
 });
 
 function downloadTabs(tabs, file_name){
