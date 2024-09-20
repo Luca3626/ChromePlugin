@@ -4,7 +4,7 @@ const all_tabs = document.getElementById("all_tabs");
 const fileInput = document.getElementById("fileInput");
 var textFile = null;
 
-console.log('ciao');
+
 chrome.tabs.query({windowID: chrome.windows.WINDOW_ID_CURRENT}, (tabs) => {
     tabs.foreach((tab, index) => {
         const tabItem = document.createElement('div');
@@ -55,7 +55,7 @@ function downloadTabs(tabs, file_name){
     });
   }
 
-  
+
   function readFileToArray(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -81,3 +81,33 @@ function downloadTabs(tabs, file_name){
   
     downloadTabs(checkedItems, file_name.value)
   }
+
+  function load() {
+    fileInput.addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        try {
+          const tabsArray = await readFileToArray(file);
+  
+          tabsArray.forEach((tab) => {
+            chrome.tabs.create({ url: tab });
+          });
+        } catch (error) {
+          console.error('Error reading file:', error);
+        }
+      }
+    });
+  }
+  
+  function dumpAll(){
+    const file_name = document.getElementById("file_name")
+  
+    chrome.tabs.query({windowId: chrome.windows.WINDOW_ID_CURRENT}, (tabs) => {
+      downloadTabs(tabs, file_name.value)
+    });
+  
+  }
+  
+  dmp_all_btn.addEventListener('click',dumpAll)
+  dmp_btn.addEventListener('click',dump)
+  load()
