@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+     <!-- Configura la viewport per garantire che il layout sia reattivo 
+     e si adatti correttamente ai dispositivi mobili -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Forza l'uso della modalità più recente di rendering 
+    nei browser più vecchi come Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>scarica tabs</title>
+  </head>
+  <body>
+    <div class="container">
+      
+      <!-- Div vuoto che verrà riempito dinamicamente 
+      da JavaScript. Verranno aggiunti gli elementi 
+      rappresentanti le schede aperte -->
+      <div id="all_tabs"></div>
+
+      <input id="file_name" type="text" placeholder="Enter file name..." required/>
+      <div id="btns">      
+        <button id="dmp_btn">Scarica</button>
+        <button id="dmp_all_btn">Scarica Tutte</button>
+      </div>
+
+      <div class="divider">or</div>
+
+      <!-- Campo di input per il caricamento di file. 
+      L'utente può caricare un file di testo con gli 
+      URL delle schede da aprire -->
+      <input type="file" id="fileInput">
+      
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
