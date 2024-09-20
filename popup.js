@@ -4,7 +4,7 @@ const all_tabs = document.getElementById("all_tabs");
 const fileInput = document.getElementById("fileInput");
 var textFile = null;
 
-chrome.tabs.query(windowID: chrome.windows.WINDOW_ID_CURRENT, (tabs) => {
+chrome.tabs.query({windowID: chrome.windows.WINDOW_ID_CURRENT}, (tabs) => {
     tabs.foreach((tab, index) => {
         const tabItem = document.createElement('div');
         tabItem.className = 'tab-item'
