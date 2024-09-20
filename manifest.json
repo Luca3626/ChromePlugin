@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "version": "0.1",
+    "name": "scarica",
+    "permissions": [
+      "tabs",
+      "downloads"
+    ],
+   
+     "action": {
+       "default_popup": "popup.html"
+     }
+  }
